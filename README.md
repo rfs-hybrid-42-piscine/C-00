@@ -46,38 +46,29 @@ The primary goal of this project is to introduce the strict **42 Norm**, basic C
 
 ## 🛠️ Instructions
 
-### 📦 Compilation & Testing
-Unlike Shell scripts, C programs must be compiled before they can be executed. Furthermore, these exercises strictly ask for functions, not complete programs. **You must write your own `main.c` files to test them.**
+### 🧪 Compilation & Testing (The Master Test)
+Unlike Shell scripts, C programs must be compiled before they can be executed. Furthermore, these exercises strictly ask for functions, not complete programs. 
+
+To make testing incredibly easy, this repository includes a `tester.c` file in the root directory that tests every single function in the C 00 module at once, complete with clean terminal formatting.
 
 1. **Clone the repository:**
    ```bash
    git clone <your_repository_link>
-   cd 42-Piscine/C00
+   cd 42-Piscine/C-00
    ```
 
-2. **Test a function (Example for `ex00`):**
-   Create a `main.c` file inside the exercise folder to call the function:
-   ```c
-   // main.c
-   void ft_putchar(char c);
-
-   int main(void)
-   {
-       ft_putchar('Z');
-       return (0);
-   }
-   ```
-
-3. **Compile with strict flags:**
-   The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`, to ensure no warnings or hidden bugs exist.
+2. **Compile all exercises together:**
+   The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`. Run this command from the root of the `C-00` directory:
    ```bash
-   cc -Wall -Wextra -Werror ft_putchar.c main.c -o test_putchar
+   cc -Wall -Wextra -Werror tester.c ex00/ft_putchar.c ex01/ft_print_alphabet.c ex02/ft_print_reverse_alphabet.c ex03/ft_print_numbers.c ex04/ft_is_negative.c ex05/ft_print_comb.c ex06/ft_print_comb2.c ex07/ft_putnbr.c ex08/ft_print_combn.c -o test_all
    ```
 
-4. **Execute:**
+3. **Execute the test:**
    ```bash
-   ./test_putchar
+   ./test_all
    ```
+
+> **⚠️ WARNING for 42 Students:** Do not push `tester.c` or the `test_all` executable to your final Moulinette repository! They are strictly for local testing purposes. Submitting unauthorized files will result in a 0.
 
 ### 🚨 The Norm
 Moulinette relies on a program called `norminette` to check if your files comply with the Norm. Every single `.c` and `.h` file must pass. 
