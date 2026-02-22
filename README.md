@@ -80,7 +80,25 @@ Unlike Shell scripts, C programs must be compiled before they can be executed. F
    ```
 
 ### 🚨 The Norm
-Moulinette relies on a program called `norminette` to check if your files comply with the Norm. Every single `.c` and `.h` file must pass. Run the following command before pushing:
+Moulinette relies on a program called `norminette` to check if your files comply with the Norm. Every single `.c` and `.h` file must pass. 
+
+**The 42 Header:**
+Before writing any code, every file must start with the standard 42 header. `norminette` will automatically fail any file missing this specific signature.
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maaugust <maaugust@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/19 18:10:30 by maaugust          #+#    #+#             */
+/*   Updated: 2025/02/20 13:55:54 by maaugust         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+```
+
+Run the following command before pushing:
 ```bash
 norminette -R CheckForbiddenSourceHeader <file.c>
 ```
