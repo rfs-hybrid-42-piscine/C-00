@@ -6,8 +6,9 @@
 
 <div align="center">
   <h1>💻 C 00: Introduction to C Programming</h1>
+  
   <img src="https://img.shields.io/badge/Language-C-blue" alt="Language badge" />
-  <img src="https://img.shields.io/badge/Grade-100%2F100-success" />
+  <img src="https://img.shields.io/badge/Grade-100%2F100-success" alt="Grade badge" />
   <img src="https://img.shields.io/badge/Norminette-Passing-success" alt="Norminette badge" />
 </div>
 
@@ -16,7 +17,7 @@
 ## 💡 Description
 **C 00** is the first purely programming-focused module of the C Piscine @ 42. It serves as the foundation for the rest of the curriculum.
 
-The primary goal of this project is to introduce the strict **42 Norm**, basic C syntax, loops, conditional statements, and ASCII math. Furthermore, it introduces the severe standard library restrictions: you are generally only allowed to use the `write` function from `<unistd.h>`. You must build everything else—from printing numbers to formatting strings—completely from scratch.
+The primary goal of this project is to introduce the strict **42 Norm**, basic C syntax, loops, conditional statements, and ASCII math. Furthermore, it introduces severe standard library restrictions: you are generally only allowed to use the `write` function from `<unistd.h>`. You must build everything else—from printing numbers to formatting strings—completely from scratch.
 
 ---
 
@@ -27,19 +28,19 @@ The primary goal of this project is to introduce the strict **42 Norm**, basic C
 ### 🔹 The Basics (ASCII & Write)
 | Exercise | Concept & Logic |
 | :--- | :--- |
-| **`ex00: ft_putchar`** | **The Foundation:** Creating a wrapper function for the system's `write` call. <br><br>**Logic:** The standard `printf` is forbidden. To print anything to the standard output (terminal), we must use `write(1, &c, 1)`, passing the file descriptor `1`, the memory address of the character `&c`, and the number of bytes `1`. |
-| **`ex01: ft_print_alphabet`** | **Loops & ASCII:** Printing the alphabet using a single loop. <br><br>**Logic:** In C, characters are just integers representing ASCII values. 'a' is `97` and 'z' is `122`. We can use a `while` loop starting at 'a' and incrementing the character by `1` until it reaches 'z'. |
-| **`ex02: ft_print_reverse_alphabet`** | **Decrementing Loops:** Printing the alphabet backwards. <br><br>**Logic:** The exact same logic as `ex01`, but initializing the variable at 'z' and using the decrement operator (`--`) until it reaches 'a'. |
-| **`ex03: ft_print_numbers`** | **Character vs Integer:** Printing digits 0 through 9. <br><br>**Logic:** We loop from the *character* '0' (ASCII 48) to the character '9' (ASCII 57). It is crucial to understand that printing the integer `0` using `write` will not output the number "0", but rather the ASCII null character. |
-| **`ex04: ft_is_negative`** | **Conditionals:** Checking the sign of a passed integer. <br><br>**Logic:** A simple introduction to `if/else` statements. If the integer `n < 0`, write 'N'. Otherwise, write 'P'. |
+| **`ex00: ft_putchar`** | **The Foundation:** Creating a wrapper function that displays the character passed as a parameter. <br><br>**Logic:** The standard `printf` is forbidden. To display the character, we must use `write(1, &c, 1)`, passing the file descriptor `1`, the memory address of the character `&c`, and the number of bytes `1`. |
+| **`ex01: ft_print_alphabet`** | **Loops & ASCII:** Printing the alphabet in lowercase, on a single line, in ascending order. <br><br>**Logic:** In C, characters are just integers representing ASCII values ('a' is `97`, 'z' is `122`). We can use a `while` loop starting at 'a' and incrementing the character by `1` until it reaches 'z'. |
+| **`ex02: ft_print_reverse_alphabet`** | **Decrementing Loops:** Printing the alphabet in lowercase, on a single line, in descending order. <br><br>**Logic:** The exact same logic as `ex01`, but initializing the variable at 'z' and using the decrement operator (`--`) until it reaches 'a'. |
+| **`ex03: ft_print_numbers`** | **Character vs Integer:** Printing all digits (0 to 9) on a single line, in ascending order. <br><br>**Logic:** We loop from the *character* '0' (ASCII 48) to the character '9' (ASCII 57). It is crucial to understand that printing the integer `0` using `write` will not output the number "0", but rather the ASCII null character. |
+| **`ex04: ft_is_negative`** | **Conditionals:** Displaying 'N' if the integer passed as a parameter is negative, or 'P' if it is positive or zero. <br><br>**Logic:** A simple introduction to `if/else` statements to check the sign of a number. If the integer `n < 0`, write 'N'. Otherwise, write 'P'. |
 
 ### 🚀 Advanced Logic & Formatting (Optional)
 | Exercise | Concept & Logic |
 | :--- | :--- |
-| **`ex05: ft_print_comb`** | **Nested Loops:** Printing all unique combinations of three different digits in ascending order. <br><br>**Logic:** Requires three nested `while` loops. The key to ensuring the combinations are unique and ascending (e.g., printing `012` but skipping `102` or `022`) is initializing the second loop's counter to `i + 1`, and the third loop's counter to `j + 1`. |
-| **`ex06: ft_print_comb2`** | **Formatting & Math:** Printing all combinations of two two-digit numbers (00 01 to 98 99). <br><br>**Logic:** Instead of characters, loop two integers from 0 to 99. To print an integer like `4` as `04`, use modulo math: the first digit is `(n / 10) + '0'` and the second is `(n % 10) + '0'`. |
-| **`ex07: ft_putnbr`** | **Recursion & Edge Cases:** Writing a function that prints *any* integer, simulating `printf("%d")`. <br><br>**Logic:** This is a classic 42 rite of passage. If a number is negative, print `-` and multiply by `-1`. Use recursion or a loop dividing by `10` to isolate digits. The ultimate trap is the integer minimum limit (`INT_MIN`: `-2147483648`), which cannot simply be multiplied by `-1` because it exceeds the `INT_MAX` limit. It must be handled as a special edge case. |
-| **`ex08: ft_print_combn`** | **Backtracking:** Printing all unique combinations of *n* digits. <br><br>**Logic:** Because *n* is dynamic (between 1 and 9), you cannot hardcode a set number of nested loops. This requires a recursive function (backtracking) and an array to store the current combination state before printing. |
+| **`ex05: ft_print_comb`** | **Nested Loops:** Displaying all unique combinations of three distinct digits, in ascending order. <br><br>**Logic:** Requires three nested `while` loops. To ensure the combinations are unique and ascending (e.g., printing `012` to `789` while skipping `102` or `022`), initialize the second loop's counter to `i + 1`, and the third loop's counter to `j + 1`. |
+| **`ex06: ft_print_comb2`** | **Formatting & Math:** Displaying all different combinations of two distinct two-digit numbers (from 00 01 to 98 99), in ascending order. <br><br>**Logic:** Loop two integers from 0 to 99. To print an integer like `4` as `04`, use modulo math: the first digit is `(n / 10) + '0'` and the second is `(n % 10) + '0'`. |
+| **`ex07: ft_putnbr`** | **Recursion & Edge Cases:** Writing a function that displays any integer passed as a parameter. <br><br>**Logic:** This is a classic 42 rite of passage. If a number is negative, print `-` and multiply by `-1`. Use recursion or a loop dividing by `10` to isolate digits. The ultimate trap is the integer minimum limit (`INT_MIN`: `-2147483648`), which exceeds `INT_MAX` if multiplied by `-1`. It must be handled as a specific edge case. |
+| **`ex08: ft_print_combn`** | **Backtracking:** Displaying all unique combinations of *n* distinct digits in ascending order. <br><br>**Logic:** Because *n* is dynamic (between 1 and 9), you cannot hardcode a set number of nested loops. This requires a recursive function (backtracking) and an array to store the current combination state before printing. |
 
 ---
 
@@ -68,9 +69,9 @@ Unlike Shell scripts, C programs must be compiled before they can be executed. F
    ```
 
 3. **Compile with strict flags:**
-   The 42 standard requires compiling with `-Wall`, `-Wextra`, and `-Werror` to ensure no warnings or hidden bugs exist.
+   The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`, to ensure no warnings or hidden bugs exist.
    ```bash
-   gcc -Wall -Wextra -Werror ft_putchar.c main.c -o test_putchar
+   cc -Wall -Wextra -Werror ft_putchar.c main.c -o test_putchar
    ```
 
 4. **Execute:**
@@ -78,8 +79,8 @@ Unlike Shell scripts, C programs must be compiled before they can be executed. F
    ./test_putchar
    ```
 
-### 🚨 Norminette
-Every `.c` file must pass the 42 Norm check. Run the following command before pushing:
+### 🚨 The Norm
+Moulinette relies on a program called `norminette` to check if your files comply with the Norm. Every single `.c` and `.h` file must pass. Run the following command before pushing:
 ```bash
 norminette -R CheckForbiddenSourceHeader <file.c>
 ```
@@ -91,7 +92,8 @@ norminette -R CheckForbiddenSourceHeader <file.c>
 * `man 3 write` - Manual for the write system call.
 * `man ascii` - The ASCII character table.
 * [42 Norm V4](https://cdn.intra.42.fr/pdf/pdf/96987/en.norm.pdf) - The strict coding standard for 42 C projects.
+* [Official 42 Norminette Repository](https://github.com/42School/norminette) - The open-source linter enforcing the strict 42 coding standard.
 
 ### 🤖 AI Usage Guidelines
-* **Code:** No AI-generated code was used to solve these exercises. All C functions were built manually to strictly comply with the 42 Norm and deeply understand manual memory manipulation.
+* **Code:** No AI-generated code was used to solve these exercises. All C functions were built manually to strictly comply with the 42 Norm and deeply understand manual memory manipulation, enforcing the concept that learning is about developing the ability to find an answer, not just getting one directly.
 * **Documentation:** AI tools were utilized to structure this `README.md` and format the logic breakdowns to create a clean, accessible educational resource for fellow 42 students.
