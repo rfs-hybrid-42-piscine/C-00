@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 
+/* --- Master Switch --- */
 #ifdef TEST_ALL
 # define EX00
 # define EX01
