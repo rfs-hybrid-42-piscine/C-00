@@ -6,7 +6,7 @@
 /*   By: maaugust <maaugust@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:23:52 by maaugust          #+#    #+#             */
-/*   Updated: 2026/02/22 22:57:30 by maaugust         ###   ########.fr       */
+/*   Updated: 2026/02/23 00:23:46 by maaugust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
  */
 static void	ft_write_digits(char c)
 {
-	char	left_digit;
-	char	right_digit;
+	char	tens_digit;
+	char	units_digit;
 
-	left_digit = (c / 10) + '0';
-	right_digit = (c % 10) + '0';
-	write(1, &left_digit, 1);
-	write(1, &right_digit, 1);
+	tens_digit = (c / 10) + '0';
+	units_digit = (c % 10) + '0';
+	write(1, &tens_digit, 1);
+	write(1, &units_digit, 1);
 }
 
 /**
