@@ -51,6 +51,8 @@ Unlike Shell scripts, C programs must be compiled before they can be executed. F
 
 To make testing incredibly easy while avoiding "undefined reference" linker errors, the `tester.c` file in the root directory uses **C Preprocessor Macros** (`#ifdef`). This allows you to selectively compile and test only the exercises you want.
 
+The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`, to ensure no warnings or hidden bugs exist.
+
 1. **Clone the repository:**
    ```bash
    git clone <your_repository_link>
@@ -71,6 +73,13 @@ To make testing incredibly easy while avoiding "undefined reference" linker erro
    # Example for ex00 and ex04:
    cc -Wall -Wextra -Werror -D EX00 -D EX04 tester.c ex00/ft_putchar.c ex04/ft_is_negative.c -o test_multiple
    ./test_multiple
+   ```
+
+4. **Test ALL Exercises at Once:**
+   By passing the `-D TEST_ALL` master flag, you can activate the entire testing suite in one go!
+   ```bash
+   cc -Wall -Wextra -Werror -D TEST_ALL tester.c ex00/ft_putchar.c ex01/ft_print_alphabet.c ex02/ft_print_reverse_alphabet.c ex03/ft_print_numbers.c ex04/ft_is_negative.c ex05/ft_print_comb.c ex06/ft_print_comb2.c ex07/ft_putnbr.c ex08/ft_print_combn.c -o test_all
+   ./test_all
    ```
 
 > **⚠️ WARNING for 42 Students:** Do not push `tester.c` or any executable files to your final Moulinette repository! They are strictly for local testing purposes. Submitting unauthorized files will result in a 0.
