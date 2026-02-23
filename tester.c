@@ -6,11 +6,23 @@
 /*   By: maaugust <maaugust@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 23:05:22 by maaugust          #+#    #+#             */
-/*   Updated: 2026/02/23 00:06:28 by maaugust         ###   ########.fr       */
+/*   Updated: 2026/02/23 00:38:04 by maaugust         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+#ifdef TEST_ALL
+# define EX00
+# define EX01
+# define EX02
+# define EX03
+# define EX04
+# define EX05
+# define EX06
+# define EX07
+# define EX08
+#endif
 
 /* --- Prototypes --- */
 void	ft_putchar(char c);
