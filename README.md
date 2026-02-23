@@ -6,6 +6,7 @@
 
 <div align="center">
   <h1>💻 C 00: Introduction to C Programming</h1>
+  <p><i>Introduction to C programming, writing to standard output (write), and basic loops.</i></p>
   
   <img src="https://img.shields.io/badge/Language-C-blue" alt="Language badge" />
   <img src="https://img.shields.io/badge/Grade-100%2F100-success" alt="Grade badge" />
