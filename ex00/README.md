@@ -14,19 +14,12 @@ The `write` function requires three arguments:
 ## 🛠️ Step-by-Step Solution
 
 1. **The Code:**
-   ```c
-   #include <unistd.h>
-
-   void ft_putchar(char c)
-   {
-       write(1, &c, 1);
-   }
-   ```
+   *Check out the source file here:* **[`ft_putchar.c`](ft_putchar.c)**
 
 2. **Testing:**
-   Use the master `tester.c` file provided in the root `C-00` directory to test this function.
+   Use the master **[`tester.c`](../tester.c)** file provided in the root `C00` directory. You must pass the `-D EX00` flag to the compiler to selectively activate the test for this specific exercise!
    ```bash
-   cc -Wall -Wextra -Werror ../tester.c ft_putchar.c -o test_putchar
-   ./test_putchar
+   cc -Wall -Wextra -Werror -D EX00 ../tester.c ft_putchar.c -o test_ex00
+   ./test_ex00
    ```
    *(Expected output: `Z`)*
