@@ -17,7 +17,7 @@ The `write` function requires three arguments:
    *Check out the source file here:* **[`ft_putchar.c`](ft_putchar.c)**
 
 2. **Testing:**
-   Use the master **[`tester.c`](../tester.c)** file provided in the root `C00` directory. You must pass the `-D EX00` flag to the compiler to selectively activate the test for this specific exercise!
+   Use the master **[`tester.c`](../tester.c)** file provided in the root `C-00` directory. You must pass the `-D EX00` flag to the compiler to selectively activate the test for this specific exercise!
    ```bash
    cc -Wall -Wextra -Werror -D EX00 ../tester.c ft_putchar.c -o test_ex00
    ./test_ex00
