@@ -49,7 +49,7 @@ The primary goal of this project is to introduce the strict **42 Norm**, basic C
 ### 🧪 Compilation & Testing (The Master Test)
 Unlike Shell scripts, C programs must be compiled before they can be executed. Furthermore, these exercises strictly ask for functions, not complete programs. 
 
-To make testing incredibly easy while avoiding "undefined reference" linker errors, the `tester.c` file in the root directory uses **C Preprocessor Macros** (`#ifdef`). This allows you to selectively compile and test only the exercises you want.
+To make testing incredibly easy while avoiding "undefined reference" linker errors, the **[`tester.c`](tester.c)** file in the root directory uses **C Preprocessor Macros** (`#ifdef`). This allows you to selectively compile and test only the exercises you want.
 
 The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`, to ensure no warnings or hidden bugs exist.
 
@@ -60,7 +60,7 @@ The 42 standard requires compiling with the exact following flags: `-Wall -Wextr
    ```
 
 2. **Test a Single Exercise:**
-   Pass the corresponding `-D EX**` flag to activate that specific test block inside `tester.c`.
+   Pass the corresponding `-D EX**` flag to activate that specific test block inside **[`tester.c`](tester.c)**.
    ```bash
    # Example for ex00:
    cc -Wall -Wextra -Werror -D EX00 tester.c ex00/ft_putchar.c -o test_ex00
