@@ -11,25 +11,12 @@ Because they are just numbers, we can perform math on them! We can initialize a 
 ## 🛠️ Step-by-Step Solution
 
 1. **The Code:**
-   ```c
-   #include <unistd.h>
-
-   void ft_print_alphabet(void)
-   {
-       char letter;
-
-       letter = 'a';
-       while (letter <= 'z')
-       {
-           write(1, &letter, 1);
-           letter++;
-       }
-   }
-   ```
+   *Check out the source file here:* **[`ft_print_alphabet.c`](ft_print_alphabet.c)**
 
 2. **Testing:**
+   Use the master **[`tester.c`](../tester.c)** file provided in the root `C-00` directory. You must pass the `-D EX01` flag to the compiler to selectively activate the test for this specific exercise!
    ```bash
-   cc -Wall -Wextra -Werror ../tester.c ft_print_alphabet.c -o test_alphabet
-   ./test_alphabet
+   cc -Wall -Wextra -Werror -D EX01 ../tester.c ft_print_alphabet.c -o test_ex01
+   ./test_ex01
    ```
    *(Expected output: `abcdefghijklmnopqrstuvwxyz`)*
