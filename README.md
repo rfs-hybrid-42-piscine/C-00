@@ -55,10 +55,20 @@ To make testing incredibly easy while avoiding "undefined reference" linker erro
 The 42 standard requires compiling with the exact following flags: `-Wall -Wextra -Werror` using `cc`, to ensure no warnings or hidden bugs exist.
 
 1. **Clone the repository:**
+   You can clone this module directly, or pull the entire 42 Piscine parent repository which includes this module as a submodule.
+
+   **Option A: Clone this module directly**
    ```bash
-   git clone <your_repository_link>
+   git clone git@github.com:rfs-hybrid-42-piscine/C-00.git C-00
+   cd C-00
+   ```
+
+   **Option B: Clone the parent repository (with submodules)**
+   ```bash
+   git clone --recurse-submodules git@github.com:rfs-hybrid/42-Piscine.git 42-Piscine
    cd 42-Piscine/C-00
    ```
+   *(Note: The `--recurse-submodules` flag ensures all nested module repositories are populated immediately.)*
 
 2. **Test a Single Exercise:**
    Pass the corresponding `-D EX**` flag to activate that specific test block inside **[`tester.c`](tester.c)**.
